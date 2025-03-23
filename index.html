@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+
+:root {
+    --strong-light: #B8860B; /* Golden premium color */
+    --strong-dark: #FFD700;  /* Bright golden for dark mode */
+}
+
+strong {
+    color: var(--strong-dark);
+    font-weight: bold;
+}
+
+.light-mode strong {
+    color: var(--strong-light);
+}
+
+        :root {
+            --bg-light: #F5F7F2;
+            --text-light: #2A3C34;
+            --box-light: #E8ECE6;
+            --shadow-light: rgba(0, 0, 0, 0.06);
+            --input-light: #DDE4DC;
+            --button-light: #4A7C59;
+            --bg-dark: #121212;
+            --text-dark: #FFFFFF;
+            --box-dark: #1E1E1E;
+            --shadow-dark: rgba(255, 255, 255, 0.1);
+            --input-dark: #333;
+            --button-dark: #0084FF;
+        }
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Yeh minimum height set karega */
+    margin: 0;
+    flex-direction: column;
+    transition: background 0.3s ease, color 0.3s ease;
+    overflow-y: auto; /* Yeh full page ko scrollable banayega */
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    background: var(--box-dark);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-dark);
+    text-align: center;
+    height: auto; /* Fixed height hata ke auto kar diya */
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#answerSection {
+    flex-grow: 1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px var(--shadow-dark);
+    text-align: left;
+}
+        
+
+        .question {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--button-dark);
+            margin-top: 10px;
+        }
+
+        .answer {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .question-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            outline: none;
+            background: var(--input-dark);
+            color: #fff;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: var(--button-dark);
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #005ecb;
+        }
+
+        #themeToggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        .light-mode {
+            background: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        .light-mode .container {
+            background: var(--box-light);
+            box-shadow: 0 4px 12px var(--shadow-light);
+        }
+
+        .light-mode #themeToggle {
+            color: var(--text-light);
+        }
+
+        .light-mode input {
+            background: var(--input-light);
+            color: var(--text-light);
+            border: 1px solid #ccc;
+        }
+
+        .light-mode #answerSection {
+            background: var(--box-light);
+            box-shadow: 0 3px 8px var(--shadow-light);
+        }
+
+        .light-mode .answer {
+            color: var(--text-light);
+        }
+
+        .light-mode .question {
+            color: var(--button-light);
+        }
+
+        .light-mode button {
+            background: var(--button-light);
+        }
+
+        .light-mode button:hover {
+            background: #3A6647;
+        }
+        
+    </style>
+</head>
+
+
+
+<body>
+    <button id="themeToggle"><i class="fas fa-moon"></i></button>
+    <div class="container">
+        <h1><i class="fas fa-american-sign-language-interpreting"></i> <b>Aalsi ladki</b> <i class="fas fa-female"></i></h1>
+
+<div id="answerSection">
+    <p class="question">Q: Distinguish between individual demand curve and market demand curve?</p>
+    <p class="answer"><strong>Definition:</strong></p>
+    <p class="answer"><strong>Individual Demand Curve:</strong> Represents the relationship between the price of a good and the quantity demanded by a single consumer.</p>
+    <p class="answer"><strong>Market Demand Curve:</strong> Represents the relationship between the price of a good and the total quantity demanded by all consumers in the market.</p>
+
+    <p class="answer"><strong>Scope:</strong></p>
+    <p class="answer"><strong>Individual Demand Curve:</strong> Limited to a single consumer.</p>
+    <p class="answer"><strong>Market Demand Curve:</strong> Encompasses all consumers in the market, giving a comprehensive picture of overall demand.</p>
+
+    <p class="answer"><strong>Construction:</strong></p>
+    <p class="answer"><strong>Individual Demand Curve:</strong> Directly shows one individual's willingness and ability to purchase at different prices.</p>
+    <p class="answer"><strong>Market Demand Curve:</strong> Obtained by horizontally summing up all individual demand curves (i.e., adding the quantities demanded by all consumers at each price level).</p>
+
+    <p class="answer"><strong>Graphical Representation:</strong></p>
+    <p class="answer"><strong>Individual Demand Curve:</strong> A single curve depicting one person's demand behavior.</p>
+    <p class="answer"><strong>Market Demand Curve:</strong> A cumulative curve showing the demand behavior of the entire market.</p>
+
+    <p class="answer"><strong>Determinants:</strong></p>
+    <p class="answer"><strong>Individual Demand Curve:</strong> Influenced by personal income, taste, preferences, and price of the good.</p>
+    <p class="answer"><strong>Market Demand Curve:</strong> Influenced by the same factors collectively, as well as the size and composition of the population.</p>
+
+    <p class="answer"><strong>Relevance:</strong></p>
+    <p class="answer"><strong>Individual Demand Curve:</strong> Useful for studying microeconomic behavior of a single consumer.</p>
+    <p class="answer"><strong>Market Demand Curve:</strong> Important for analyzing market trends, setting prices, and formulating economic policies.</p>
+
+    <p class="answer"><strong>Shape:</strong> Both curves usually slope downward from left to right, indicating the law of demand.</p>
+
+    <p class="answer"><strong>Focus:</strong></p>
+    <p class="answer"><strong>Individual Demand Curve:</strong> Focuses on individual consumer behavior.</p>
+    <p class="answer"><strong>Market Demand Curve:</strong> Provides an aggregate picture of the market demand at various price levels.</p>
+
+    <p class="question">Q: Discuss the factors affecting the price elasticity of demand?</p>
+    <p class="answer"><strong>Nature of the Good:</strong></p>
+    <p class="answer">Necessities like food and medicine have inelastic demand as they are essential. Luxuries like jewelry or designer clothing have elastic demand because their purchase can be postponed.</p>
+
+    <p class="answer"><strong>Availability of Substitutes:</strong></p>
+    <p class="answer">If close substitutes are available, demand tends to be elastic because consumers can switch to alternatives when the price increases. If substitutes are limited, demand becomes inelastic.</p>
+
+    <p class="answer"><strong>Proportion of Income Spent:</strong></p>
+    <p class="answer">Goods that take up a large portion of income, like cars, have elastic demand, while inexpensive goods like salt have inelastic demand.</p>
+
+    <p class="answer"><strong>Time Period:</strong></p>
+    <p class="answer">In the short term, demand is usually inelastic as consumers need time to adjust their habits. Over the long term, demand becomes more elastic.</p>
+
+    <p class="answer"><strong>Habitual Consumption:</strong></p>
+    <p class="answer">Goods that are habit-forming, like tobacco or alcohol, have inelastic demand because consumers continue buying despite price changes.</p>
+
+    <p class="answer"><strong>Definition of the Market:</strong></p>
+    <p class="answer">Broadly defined markets (e.g., "food") tend to have inelastic demand, while narrowly defined markets (e.g., "organic apples") have more elastic demand due to specific substitutes.</p>
+
+    <p class="answer"><strong>Durability of the Good:</strong></p>
+    <p class="answer">Durable goods (e.g., cars, appliances) tend to have elastic demand because their purchase can be postponed. Perishable goods are more inelastic.</p>
+
+    <p class="answer"><strong>Advertising and Brand Loyalty:</strong></p>
+    <p class="answer">Strong advertising and brand loyalty make demand inelastic, as consumers stick to a particular brand regardless of price changes.</p>
+
+<p class="question">Q: Discuss the exceptions of the law of demand?</p>
+
+<p class="answer"><strong>Giffen Goods:</strong> These are inferior goods whose demand increases when their price rises because consumers cut back on more expensive substitutes.</p>
+<p><strong>Example:</strong> Poor families buying more potatoes when prices rise as they can't afford alternatives.</p>
+
+<p class="answer"><strong>Veblen Goods (Conspicuous Consumption):</strong> Luxury goods become more desirable when their prices increase.</p>
+<p><strong>Example:</strong> Designer brands, luxury watches, high-end cars.</p>
+
+<p class="answer"><strong>Necessities:</strong> Some essential goods have inelastic demand, meaning their demand doesn’t change much with price.</p>
+<p><strong>Example:</strong> Life-saving medicines like insulin, basic utilities like electricity.</p>
+
+<p class="answer"><strong>Speculation and Future Expectations:</strong> People may buy more if they expect prices to rise further.</p>
+<p><strong>Example:</strong> Investors buying more real estate despite rising prices, expecting future value appreciation.</p>
+
+<p class="answer"><strong>Bandwagon Effect:</strong> People buy goods just because others are buying them, regardless of price.</p>
+<p><strong>Example:</strong> Trending fashion items, viral products.</p>
+
+<p class="answer"><strong>Ignorance Effect:</strong> Consumers may assume that a higher price means better quality.</p>
+<p><strong>Example:</strong> Expensive health supplements perceived as more effective.</p>
+
+<p class="answer"><strong>Habitual Consumption:</strong> Some goods are consumed regularly, even when prices rise.</p>
+<p><strong>Example:</strong> Tobacco, alcohol, coffee.</p>
+<p class="question">Q: Differentiate between the Law of Variable Proportion and the Law of Returns to Scale?</p>
+
+<p class="answer"><strong>1. Definition:</strong></p>
+<p class="answer"><strong>Law of Variable Proportion:</strong> Examines the relationship between input and output when one input (e.g., labor) is variable while others (e.g., capital) are fixed. It operates in the <strong>short run</strong> where at least one factor remains constant.</p>
+<p class="answer"><strong>Law of Returns to Scale:</strong> Explores the relationship between input and output when all inputs are increased proportionately. It operates in the <strong>long run</strong> where all factors of production are variable.</p>
+
+<p class="answer"><strong>2. Time Frame:</strong></p>
+<p class="answer"><strong>Variable Proportion:</strong> Applies to the <strong>short run</strong>.</p>
+<p class="answer"><strong>Returns to Scale:</strong> Applies to the <strong>long run</strong>.</p>
+
+<p class="answer"><strong>3. Nature of Inputs:</strong></p>
+<p class="answer"><strong>Variable Proportion:</strong> Varies only one factor of production (e.g., labor) while keeping others constant.</p>
+<p class="answer"><strong>Returns to Scale:</strong> Changes all factors of production simultaneously and in the same proportion.</p>
+
+<p class="answer"><strong>4. Stages:</strong></p>
+<p class="answer"><strong>Variable Proportion:</strong> Divided into three stages:
+    <ul>
+        <li>Increasing Returns</li>
+        <li>Diminishing Returns</li>
+        <li>Negative Returns</li>
+    </ul>
+</p>
+<p class="answer"><strong>Returns to Scale:</strong> Divided into three types:
+    <ul>
+        <li>Increasing Returns to Scale (output increases more than inputs)</li>
+        <li>Constant Returns to Scale (output increases in the same proportion as inputs)</li>
+        <li>Decreasing Returns to Scale (output increases less than inputs)</li>
+    </ul>
+</p>
+
+<p class="answer"><strong>5. Scale of Operation:</strong></p>
+<p class="answer"><strong>Variable Proportion:</strong> Deals with small-scale changes by adjusting a single input.</p>
+<p class="answer"><strong>Returns to Scale:</strong> Deals with large-scale changes in production by proportionately varying all inputs.</p>
+
+<p class="answer"><strong>6. Practical Application:</strong></p>
+<p class="answer"><strong>Variable Proportion:</strong> Helps understand short-term production issues, e.g., agricultural productivity by adding more labor to fixed land.</p>
+<p class="answer"><strong>Returns to Scale:</strong> Useful in analyzing long-term growth strategies, e.g., expanding a factory by doubling labor, machinery, and raw materials.</p>
+
+<p class="answer"><strong>7. Assumptions:</strong></p>
+<p class="answer"><strong>Variable Proportion:</strong> Assumes one factor is fixed.</p>
+<p class="answer"><strong>Returns to Scale:</strong> Assumes all factors can be varied.</p>
+
+<p class="answer"><strong>8. Example:</strong></p>
+<p class="answer"><strong>Variable Proportion:</strong> Adding more workers to a fixed amount of land—initially, output increases, then diminishes, and eventually turns negative.</p>
+<p class="answer"><strong>Returns to Scale:</strong> Doubling both workers and machinery in a factory—output may increase more than double, exactly double, or less than double.</p>
+
+<style>
+  p {
+    text-align: left;
+}
+</style>
+        <div class="question-box">
+            <input type="text" id="questionInput" placeholder="Ask a question...">
+            <button onclick="submitQuestion()">Ask</button>
+        </div>
+    </div>
+
+    <script>
+        function submitQuestion() {
+            let questionInput = document.getElementById("questionInput");
+            let questionText = questionInput.value.trim();
+            let answerSection = document.getElementById("answerSection");
+
+            if (questionText === "") {
+                alert("Please enter a question!");
+                return;
+            }
+
+            let answerText = "That's an interesting question! Currently, we do not have an answer for it.";
+
+            let newQuestion = document.createElement("p");
+            newQuestion.classList.add("question");
+            newQuestion.innerHTML = `<strong>Q:</strong> ${questionText}`;
+
+            let newAnswer = document.createElement("p");
+            newAnswer.classList.add("answer");
+            newAnswer.innerHTML = `<strong>Answer:</strong> ${answerText}`;
+
+            answerSection.appendChild(newQuestion);
+            answerSection.appendChild(newAnswer);
+            
+            questionInput.value = "";
+        }
+
+        const themeToggle = document.getElementById("themeToggle");
+        let isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        function updateTheme() {
+            document.body.classList.toggle("light-mode", !isDarkMode);
+            themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+        }
+
+        themeToggle.addEventListener("click", () => {
+            isDarkMode = !isDarkMode;
+            updateTheme();
+        });
+
+        updateTheme();
+    </script>
+    <footer style="background: #222; color: white; text-align: center; padding: 20px; width: 100%; position: relative;">
+    <p>&copy; 2024 Aalsi Ladki | All Rights Reserved</p>
+</footer>
+<style>
+  footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    box-shadow: 0px -2px 5px rgba(255, 69, 0, 0.3);
+}
+</style>
+</body>
+</html>
